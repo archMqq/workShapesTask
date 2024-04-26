@@ -1,0 +1,6 @@
+SELECT Products.Name AS ProductName, ISNULL(Categories.Name, 'Категория отсутствует') AS CategoryName
+FROM Products
+LEFT JOIN ProductCategory ON Products.ProductID = ProductCategory.ProductID
+LEFT JOIN Categories ON ProductCategory.CategoryID = Categories.CategoryID;
+
+Без связующей таблицы невозможно создать соединение.
